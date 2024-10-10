@@ -1,26 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto replica - web componets - AnaG designWeb</title>
+    <link rel="stylesheet" href="./styles/style.css">
     <style>
-        :root {
-            --Background-color-blue: #1084FF;
-        }
-        *, html, body {
-            width: 100%;
-            padding: 0;
-            margin: 0;
-        }
-        h1{
-            font-size: 45px;
-        }
-        h2{
-            font-size: 35px;
-        }
+    
         .section-hero-scroll {
             position: absolute;
+            width: fit-content;
             bottom: 20px; /* Espacio desde el borde inferior */
             left: 50%;
             transform: translateX(-50%); /* Centrar horizontalmente */
@@ -36,58 +25,6 @@
             justify-content: center; /* Centra horizontalmente */
             align-items: center; /* Centra verticalmente */
         }
-        .section-hero-tittle{
-            padding: 10px;
-            border: 1px solid rgb(72, 255, 0);
-            width: fit-content;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-        .section-hero-tittle > .section-hero-tittle-h {
-            overflow: hidden;
-            width: fit-content;        
-            clip-path: polygon(0 5px, 5px 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%);
-            border-left: 5px solid transparent; /* Inicialmente transparente */
-            border-bottom: 5px solid transparent; /* Inicialmente transparente */
-            transform: translate(0, 0); /* Inicialmente sin movimiento */
-            animation: borderAnimation 0.5s ease-out forwards, moveBox 0.5s ease-out forwards; /* Añadir ambas animaciones */
-            animation-delay: 1.5s; /* Retrasar para que ocurra después del slideUp */
-        }
-
-        .section-hero-tittle > .section-hero-tittle-h > * {
-            transform: translateY(50px); /* Inicia más abajo */
-            animation: slideUp 1.5s ease-out forwards; /* Añadir animación */
-        }
-
-        @keyframes slideUp {
-            0% {
-                transform: translateY(50px); /* Posición inicial (abajo) */
-            }
-            100% {
-                transform: translateY(0); /* Posición final (arriba) */
-            }
-        }
-        /* Animación del borde */
-        @keyframes borderAnimation {
-            0% {
-                border-left-color: transparent;
-                border-bottom-color: transparent;
-            }
-            100% {
-                border-left-color: #000;
-                border-bottom-color: #000;
-            }
-        }
-        /* Animación de movimiento de la caja */
-        @keyframes moveBox {
-            0% {
-                transform: translate(0, 0); /* Posición inicial sin movimiento */
-            }
-            100% {
-                transform: translate(5px, -5px); /* Mover 5px a la derecha y 5px hacia arriba */
-            }
-        }
 
         .section-mission {
             width: 100%;
@@ -98,29 +35,33 @@
 </head>
 <body>
     <section class="section-hero">
-        <div class="section-hero-tittle">
-            <div class="section-hero-tittle-h">
-                <h1>OpenEU</h1>                
-            </div>
-            <div  class="section-hero-tittle-h">
-                <h2>The Open European University</h2>                
-            </div>
+        <hero-title-box></hero-title-box>
+    </section>
+ 
+    <section class="section-mission">
+        <div class="tittle-mission">
+            <h2>Our Mission</h2>
+            <hero-title-box></hero-title-box>
+            <p>We are focused on digital transformation, inclusive education, and sustainability.</p>    
         </div>
         <div class="section-hero-scroll">
             <span>scroll</span>
         </div>
     </section>
 
+    <script>
+        function adjustWidth() {
+            const h1 = document.querySelector('h1');
+            const h2 = document.querySelector('h2');
+            h2.style.width = `${h1.offsetWidth}px`;
+        }
 
-    
-    <section class="section-mission">
-        <div class="tittle-mission">
+        // Ajustar el tamaño inicial
+        adjustWidth();
 
-            <h2>Our Mission</h2>
-            <p>We are focused on digital transformation, inclusive education, and sustainability.</p>    
-        </div>
-        <div>Scroll</div>
-    </section>
-    <script type="module"></script>
+        // Actualizar el tamaño cuando la ventana cambie de tamaño
+        window.addEventListener('resize', adjustWidth);
+    </script>
+    <script src="./scripts/components/SectionHero/HeroTitleBox.js"></script>
 </body>
 </html>
