@@ -13,9 +13,8 @@ class HeroTitleBox extends HTMLElement {
             font-weight: 300;
             line-height: 33px;
         }
-
+      
         .section-hero-tittle {
-            border: 1px solid rgb(72, 255, 0);
             width: fit-content;
             display: flex;
             flex-direction: column;
@@ -24,6 +23,7 @@ class HeroTitleBox extends HTMLElement {
 
         /* componente - Contenedor principal */
         .section-hero-tittle > .section-hero-tittle-h {
+
             overflow: hidden;
             width: fit-content;   
             padding: 5px 5px 15px 15px;     
@@ -90,6 +90,7 @@ class HeroTitleBox extends HTMLElement {
         this.elements();
         this.adjustWidth(); // Ajustar el tamaño inmediatamente después de renderizar
         this.events();
+        this.addAnimationListener();
     }
 
     adjustWidth = () => {
@@ -97,6 +98,13 @@ class HeroTitleBox extends HTMLElement {
             // Asegurarse de que los elementos existan
             this.$h2.style.width = `${this.$h1.offsetWidth}px`;
         }
+    }
+    addAnimationListener() {
+        // Escuchar cuando termine la animación del primer componente para usarlo en otros compoonentes
+        this.shadowRoot.querySelector('.section-hero-tittle-h').addEventListener('animationend', () => {
+            // Lanza el evento personalizado cuando termine la animación
+            this.dispatchEvent(new CustomEvent('hero-animation-complete', { bubbles: true }));
+        });
     }
 
     render() {

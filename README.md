@@ -1,10 +1,5 @@
 # Proyecto: Replica Web Components 🚀
 
-![npm](https://img.shields.io/badge/npm-v7.0.0-red)
-![ESLint](https://img.shields.io/badge/ESLint-enabled-brightgreen)
-
-Este proyecto utiliza **Web Components** para crear una aplicación web modular y reutilizable. Está configurado con **npm** para la gestión de dependencias y **ESLint** para asegurar la calidad del código.
-
 ## Descripción 📝
 
 Este proyecto se basa en **Web Components**, una tecnología que permite crear componentes HTML personalizados y reutilizables. Los **Web Components** encapsulan la estructura, el estilo y el comportamiento en un solo archivo, lo que facilita la creación de elementos reutilizables en cualquier proyecto.
@@ -14,14 +9,31 @@ Este proyecto se basa en **Web Components**, una tecnología que permite crear c
 HTML5
 CSS3
 JavaScript (ES6)
-Web Components
-npm para la gestión de dependencias.
-ESLint para mantener la calidad del código.
 
-## Scripts de npm 📜
+## Estilos css generales del proyecto:
 
-- **Corrección automática de errores**:
+IMPORTANTE: Los elementos llevan aplicadas algunas clases mas a parte de las necesarias para la animación (para los tamaños de los textos, posiciones...) Si quieres seguir utilizando esas clases debes copiarlas tambien con el elemento al igual que haras copiando las clases para las animaciones.
 
-```bash
-npx eslint .
+## Animaciones del proyecto:
+
+### Animación `TextAnimatedHeading`
+
+Esta animación se aplica a elementos de texto para que **aparezcan con un desplazamiento suave** desde abajo hacia su posición original.
+
+#### Uso:
+
+1. Aplica la clase `TextAnimatedHeading` a un contenedor que contenga un elemento de texto ( parrafo, headding...).
+2. El texto se deslizará hacia arriba al aparecer.
+
+#### Ejemplo:
+
+```html
+<div class="TextAnimatedHeading">
+  <h1>Título animado</h1>
+</div>
 ```
+
+#### Codigo equivalente:
+
+- **CSS**: 0.6s
+- **JS**: Desplaza el texto 50px hacia arriba hasta su posición original.

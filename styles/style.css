@@ -1,11 +1,114 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-:root {
-    --Background-color-blue: #1084FF;
-}
 
+/* Este style contiene:
+    1ª PARTE: el estilo general, estructura de la pagina y posicion de sus secciones
+    2ª PARTE: estilo de los componentes reutilizables por orden de aparicion en la web
+*/
+/* 1ª PARTE - estilo y estructura general */
 *, html, body {
     width: 100%;
     padding: 0;
     margin: 0;
     font-family: "Work Sans", sans-serif;
 }
+/* estilos de los textos  */
+h1{
+    font-size: 40px;
+}
+
+
+
+.bordeColor{
+    border: 1px solid red;
+}
+/* estilos de las secciones  */
+.centered-section {
+    box-sizing: border-box;
+    width: 60vw;
+    max-width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 100px;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.section-hero{
+    box-sizing: border-box;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: var(--Background-color-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+hero-title-box {
+    display: block;
+    width: fit-content;
+    margin: 0;
+}
+hero-scroll {
+    /*Esto es adicional ya que al añadir un web component con shadow DOM no interactua bien*/
+    display: block; /* Asegura que el componente ocupe su propio espacio */
+    width: fit-content;
+    margin: 0;
+    position: absolute;
+    width: fit-content;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* Section mission */
+.section-mission-container-text{
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 0 0 25px 25px;
+    width: fit-content;
+}
+.section-mission {
+    width: 100%;
+    background-color: #00FF86;
+}
+
+.arrow{
+    width: fit-content;
+   height: 130px; 
+   margin: 30px 0 0 auto;
+}
+
+
+/* 2ª PARTE - componentes reutilizables */
+
+/* ANIMACION TEXTO QUE APARECE - elemento: TextAnimatedHeading */
+/*Estilo del elemento*/
+.TextAnimatedHeading{
+    font-size: 50px;
+    font-weight: 300;
+    overflow: hidden;
+    padding: 0px 0px 10px;
+}
+/* Animacion del elemento */
+/* Estado inicial del texto: desplazado hacia abajo y oculto */
+.TextAnimatedHeading > * {
+    transform: translateY(50px);
+    transition: transform 0.6s ease-out;
+}
+/* Funcion de animación del texto al entrar en la viewport */
+@keyframes slideIn {
+    0% {
+        transform: translateY(50px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+/* Clase para activar la animación del texto al entrar en la viewport */
+.TextAnimatedHeading.visible > * {
+    animation: slideIn 0.6s ease-out forwards;
+}
+/* FINAL DE - ANIMACION TEXTO QUE APARECE - elemento: TextAnimatedHeading */
+

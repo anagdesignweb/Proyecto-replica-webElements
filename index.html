@@ -5,63 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto replica - web componets - AnaG designWeb</title>
     <link rel="stylesheet" href="./styles/style.css">
-    <style>
-    
-        .section-hero-scroll {
-            position: absolute;
-            width: fit-content;
-            bottom: 20px; /* Espacio desde el borde inferior */
-            left: 50%;
-            transform: translateX(-50%); /* Centrar horizontalmente */
-            text-align: center;
-            border: 1px solid rgb(72, 255, 0);
-        }
-        .section-hero{
-            box-sizing: border-box;
-            width: 100vw;
-            min-height: 100vh;
-            background-color: var(--Background-color-blue);
-            display: flex;
-            justify-content: center; /* Centra horizontalmente */
-            align-items: center; /* Centra verticalmente */
-        }
-
-        .section-mission {
-            width: 100%;
-            height: 500px;
-        }
-        
-    </style>
 </head>
 <body>
+    <header>
     <section class="section-hero">
-        <hero-title-box></hero-title-box>
-    </section>
- 
-    <section class="section-mission">
-        <div class="tittle-mission">
-            <h2>Our Mission</h2>
+        <div class="centered-section">
             <hero-title-box></hero-title-box>
-            <p>We are focused on digital transformation, inclusive education, and sustainability.</p>    
+            <hero-scroll></hero-scroll>
         </div>
-        <div class="section-hero-scroll">
-            <span>scroll</span>
+    </section>        
+    </header>
+    <main>
+    <section class="section-mission">
+        <div  class="centered-section">
+            <div class="section-mission-container-text">
+                <div class="TextAnimatedHeading">
+                    <p>more digital</p>
+                </div>
+                <div class="TextAnimatedHeading">
+                    <p>more innovative</p>
+                </div>
+                <div class="TextAnimatedHeading">
+                    <p>more diverse</p>
+                </div>
+                <div class="TextAnimatedHeading">
+                    <p>more flexible</p>
+                </div>
+                <div class="TextAnimatedHeading">
+                    <p>more learner-centred</p>
+                </div>
+                <div class="TextAnimatedHeading">
+                    <p>more sustainable</p>
+                </div>
+                <div class="TextAnimatedHeading">
+                    <p>more long-lasting</p>
+                </div>
+                <div class="TextAnimatedHeading">
+                    <p>The pan-European open university</p>
+                </div>
+            </div>
+            <img class="arrow" src="src/img/fletxa.svg" alt="" srcset="">
         </div>
-    </section>
+        <div section-mission-container-text>
+            <h2 class="title">Our mission</h2>
+        </div>
 
+
+    </section>        
+    </main>
+
+
+    <!--  scripts para las animaciones -->
     <script>
-        function adjustWidth() {
-            const h1 = document.querySelector('h1');
-            const h2 = document.querySelector('h2');
-            h2.style.width = `${h1.offsetWidth}px`;
-        }
+        // ANIMACION TEXTO QUE APARECE - elemento: TextAnimatedHeading:
+        // Utilizando IntersectionObserver para saber cuando el elemento entra en pantalla
+        document.addEventListener("DOMContentLoaded", function () {
+            const animatedElements = document.querySelectorAll('.TextAnimatedHeading');
 
-        // Ajustar el tamaño inicial
-        adjustWidth();
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // El elemento entra en el viewport: añadir clase para animar la entrada
+                        entry.target.classList.add('visible');
+                    } else {
+                        // El elemento sale del viewport: quitar la clase para reiniciar la animación
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1 // La animación se activa cuando el 10% del elemento sea visible
+            });
 
-        // Actualizar el tamaño cuando la ventana cambie de tamaño
-        window.addEventListener('resize', adjustWidth);
+            animatedElements.forEach(el => {
+                observer.observe(el); // Para observa cada elemento con la clase TextAnimatedHeading y saber si esta en el viewport
+            });
+        });
+        // Animación `TextAnimatedHeading`:
     </script>
+
     <script src="./scripts/components/SectionHero/HeroTitleBox.js"></script>
+    <script src="./scripts/components/SectionHero/HeroScroll.js"></script>
 </body>
 </html>
