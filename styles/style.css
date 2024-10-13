@@ -10,6 +10,7 @@
     padding: 0;
     margin: 0;
     font-family: "Work Sans", sans-serif;
+    box-sizing: border-box;
 }
 /* estilos de los textos  */
 .h1{
@@ -21,18 +22,37 @@
     font-weight: 300;
 }
 
-/* estilos de los textos  */
-
-
 .bordeColor{
     border: 1px solid red;
 }
-/* estilos de las secciones  */
+/* estilos generales de las secciones  */
 
-.section-hero{
+.centered-section {
     box-sizing: border-box;
+    width: 60vw;
+    margin: 0 auto;
+}
+.section {
     width: 100vw;
     min-height: 100vh;
+    padding-top: 100px;
+    overflow-x: hidden;
+}
+.section-mission > .centered-section > *:not(:last-child){
+    margin-bottom: 70px;
+}
+.section-mission-container-1{
+    display: flex;
+}
+.section-border{
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 0 0 25px 25px;   
+}
+
+/* Section hero */
+.section-hero{
+    box-sizing: border-box;
     background-color: #1084FF;
     display: flex;
     flex-direction: column;
@@ -51,15 +71,6 @@
     flex-direction: column;
     align-items: center;
 }
-.centered-section {
-    box-sizing: border-box;
-    width: 60vw;
-    max-width: 100%;
-    margin: 0 auto;
-}
-.section-mission-container1{
-    display: flex;
-}
 hero-title-box {
     display: block;
     width: fit-content;
@@ -76,19 +87,10 @@ hero-scroll {
     left: 50%;
     transform: translateX(-50%);
 }
+
 /* Section mission */
 .section-mission {
-    width: 100%;
-    padding-top: 100px;
     background-color: #00FF86;
-}
-
-
-.section-mission-container{
-    border-left: 2px solid black;
-    border-bottom: 2px solid black;
-    padding: 0 0 25px 25px;
-    max-width: fit-content;
 }
 
 .arrow{
@@ -96,8 +98,17 @@ hero-scroll {
    height: 180px; 
    margin: 30px 0 0 auto;
 }
+.section-mission-map{
+    width: 750px;
+    margin-left: auto;
+    margin-bottom: -8px;
+    margin-right: -1px;
+}
 
-
+/* Section numbers */
+.section-numbers{
+    background-color:#B765FF;
+}
 /* 2ª PARTE - componentes reutilizables */
 
 /* ANIMACION TEXTO QUE APARECE - elemento: TextAnimatedHeading */
@@ -147,8 +158,13 @@ hero-scroll {
     .arrow{
         width: 130px;
     }
-    .section-mission-container1{
+    .section-mission-container-1{
         flex-direction: column;
+    }
+    .section-mission-map{
+        width: 100%;
+        display: block;
+        margin-top: auto;
     }
 }
 @media only screen and (max-width: 768px) {
