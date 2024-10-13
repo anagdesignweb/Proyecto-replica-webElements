@@ -13,6 +13,7 @@ JavaScript (ES6)
 ## Estilos css generales del proyecto:
 
 IMPORTANTE: Los elementos llevan aplicadas algunas clases mas a parte de las necesarias para la animación (para los tamaños de los textos, posiciones...) Si quieres seguir utilizando esas clases debes copiarlas tambien con el elemento al igual que haras copiando las clases para las animaciones.
+Tambien hay que tener en cuenta las media queries si quieres que sea responsive y adaptativo en cada tamaño de pantalla.
 
 ## Animaciones del proyecto:
 
