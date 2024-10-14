@@ -13,41 +13,41 @@
             <hero-title-box></hero-title-box>
             <hero-scroll></hero-scroll>
         </div>
-    </section>        
+    </section>
     </header>
     <main>
     <section class="section-mission section">
-        <div class="centered-section bordeColor">
+        <div class="centered-section">
             <div  class="section-mission-container-1 ">
                 <div class="section-border">
-                    <div class="TextAnimatedHeading h1">
+                    <div class="slideInAnimation h1">
                         <p>more digital</p>
                     </div>
-                    <div class="TextAnimatedHeading h1">
+                    <div class="slideInAnimation h1">
                         <p>more innovative</p>
                     </div>
-                    <div class="TextAnimatedHeading h1">
+                    <div class="slideInAnimation h1">
                         <p>more diverse</p>
                     </div>
-                    <div class="TextAnimatedHeading h1">
+                    <div class="slideInAnimation h1">
                         <p>more flexible</p>
                     </div>
-                    <div class="TextAnimatedHeading h1">
+                    <div class="slideInAnimation h1">
                         <p>more learner-centred</p>
                     </div>
-                    <div class="TextAnimatedHeading h1">
+                    <div class="slideInAnimation h1">
                         <p>more sustainable</p>
                     </div>
-                    <div class="TextAnimatedHeading h1">
+                    <div class="slideInAnimation h1">
                         <p>more long-lasting</p>
                     </div>
-                    <div class="TextAnimatedHeading h1">
+                    <div class="slideInAnimation h1">
                         <p>The pan-European open university</p>
                     </div>
                 </div>
                 <img class="arrow" src="src/img/fletxa.svg" alt="" srcset="">
             </div>
-            <div class="section-border h1">
+            <div class="section-title h1">
                 <p>Our mission</p>
             </div>
             <div class="section-border h2">
@@ -67,17 +67,71 @@
 
     <section class="section-numbers section">
         <div class="centered-section">
-
-            <div class="section-border h1">
+            <div class="section-title h1">
                 <p>OpenEU in figures</p>
             </div>
             <div class="section-numbers-container">
                 <article class="section-border number-box">
-                    <div class="slide-up"><img loading="auto" src="src/img/xifra1.svg" height="150px" alt="Number of students"></div>
-                    <p class="h5">+<span>368,000</span></p>
+                    <div class="slide-up slideInAnimation"><img loading="auto" src="src/img/xifra1.svg" height="150px" alt="Number of students"></div>
+                    <p class="h5">+<span class="counter">368,000</span></p>
                     <p class="h2">Number of students</p>
                     <p class="h2">Academic year: 2022/2023</p>
+                </article>
 
+                <article class="section-border number-box">
+                    <div class="slide-up slideInAnimation"><img loading="auto" src="src/img/xifra2.svg" height="150px" alt="Number of students"></div>
+                    <p class="h5">+<span class="counter">709,000</span></p>
+                    <p class="h2">Number of Graduates</p>
+                </article>
+
+                <article class="section-border number-box">
+                    <div class="slide-up slideInAnimation"><img loading="auto" src="src/img/xifra3.svg" height="150px" alt="Number of students"></div>
+                    <p class="h5"><span class="counter">24,160</span></p>
+                    <p class="h2">Total staff</p>
+                </article>
+
+                <article class="section-border number-box">
+                    <div class="slide-up slideInAnimation"><img loading="auto" src="src/img/xifra4.svg" height="150px" alt="Number of students"></div>
+                    <p class="h5"><span class="counter">36</span></p>
+                    <p class="h2">Average age of students</p>
+                </article>
+
+                <article class="section-border number-box">
+                    <div class="slide-up slideInAnimation"><img loading="auto" src="src/img/xifra5.svg" height="150px" alt="Number of students"></div>
+                    <p class="h5"><span class="counter">84</span>%</p>
+                    <p class="h2">of students work and study at the same time</p>
+                </article>
+
+                <article class="section-border number-box">
+                    <p class="h2">We offer a wide range of...</p>
+                    <div class="number-box-tags">
+                        <span class="tag">Bachelors</span>
+                        <span class="tag">Masters</span>
+                        <span class="tag">Doctoral</span>
+                        <span class="tag">Lifelong learning</span>
+                        <span class="tag">Open courses</span>
+                        <span class="tag">Exam preparation courses</span>
+                        <span class="tag">Vocational training</span>
+                    </div>
+                </article>
+
+                <article class="section-border number-box">
+                    <p class="h5"><span class="counter">12</span></p>
+                    <p class="h2">Study languages</p>
+                    <div class="number-box-tags">
+                        <span class="tag">Bulgarian</span>
+                        <span class="tag">Catalan</span>
+                        <span class="tag">Dutch</span>
+                        <span class="tag">English</span>
+                        <span class="tag">French</span>
+                        <span class="tag">German</span>
+                        <span class="tag">Greek</span>
+                        <span class="tag">Icelandic</span>
+                        <span class="tag">Latvian</span>
+                        <span class="tag">Portuguese</span>
+                        <span class="tag">Russian</span>
+                        <span class="tag">Spanish</span>
+                    </div>
                 </article>
             </div>
         </div>
@@ -89,30 +143,75 @@
 
     <!--  scripts para las animaciones -->
     <script>
-        // ANIMACION TEXTO QUE APARECE - elemento: TextAnimatedHeading:
+        // ANIMACION ELEMENTO QUE APARECE - section: section-mission elemento: slideInAnimation
         // Utilizando IntersectionObserver para saber cuando el elemento entra en pantalla
         document.addEventListener("DOMContentLoaded", function () {
-            const animatedElements = document.querySelectorAll('.TextAnimatedHeading');
+            const animatedElements = document.querySelectorAll('.slideInAnimation');
 
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // El elemento entra en el viewport: añadir clase para animar la entrada
+                        // El elemento entra en el viewport: añade la clase para animar la entrada
                         entry.target.classList.add('visible');
                     } else {
-                        // El elemento sale del viewport: quitar la clase para reiniciar la animación
+                        // El elemento sale del viewport: quita la clase para reiniciar la animación
                         entry.target.classList.remove('visible');
                     }
                 });
             }, {
-                threshold: 0.1 // La animación se activa cuando el 10% del elemento sea visible
+                threshold: 1.0 // La animación se activa cuando el 10% del elemento sea visible
             });
 
             animatedElements.forEach(el => {
-                observer.observe(el); // Para observa cada elemento con la clase TextAnimatedHeading y saber si esta en el viewport
+                observer.observe(el); // Para observa cada elemento con la clase slideInAnimation y saber si esta en el viewport
             });
         });
-        // Animación `TextAnimatedHeading`:
+    </script>
+    <script>
+        // ANIMACION box NUMEROS que aparecen - section: section-numbers elemento: number-box
+        // setInterval para la animacion de los numeros y IntersectionObserver para saber cuando el elemento entra en pantalla
+        document.addEventListener("DOMContentLoaded", function () {
+            const contadores = document.querySelectorAll('.counter'); // 
+            contadores.forEach(contador => {
+                let cantidadInicial = 0;
+                const valorFinal = parseInt(contador.textContent.replace(',', ''));
+                const tiempo = 2000; // Duración total de la animacion en milisegundos
+                const incremento = Math.ceil(valorFinal / (tiempo / 100));
+                let intervalo;
+
+                // Función para actualiza el numero
+                function actualizarDato() {
+                    if (cantidadInicial < valorFinal) {
+                        cantidadInicial += incremento;
+                        if (cantidadInicial > valorFinal) {
+                            cantidadInicial = valorFinal;
+                        }
+                        contador.textContent = cantidadInicial.toLocaleString();
+                    } else {
+                        clearInterval(intervalo); // Detiene el intervalo
+                    }
+                }
+
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // si el elemento es visible en pantalla entonces ejecuta la funcion de la animacion
+                            intervalo = setInterval(actualizarDato, 25); // Anima cada 25 ms
+                        } else {
+                            // Sino reinicia los valores del contador para que la animación se repita
+                            clearInterval(intervalo);
+                            cantidadInicial = 0;
+                            contador.textContent = '0';
+                        }
+                    });
+                }, {
+                    threshold: 1.0 // Inicia cuando el 100% del elemento es visible
+                });
+
+                observer.observe(contador);
+            });
+        });
+
     </script>
 
     <script src="./scripts/components/SectionHero/HeroTitleBox.js"></script>

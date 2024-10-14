@@ -21,12 +21,16 @@
     font-size: 32px;
     font-weight: 300;
 }
-
+.h5 {
+    font-size: 60px;
+    line-height: 60px;
+    font-weight: 300;
+}
 .bordeColor{
     border: 1px solid red;
 }
-/* estilos generales de las secciones  */
 
+/* estilos generales de las secciones  */
 .centered-section {
     box-sizing: border-box;
     width: 60vw;
@@ -44,9 +48,15 @@
 .section-mission-container-1{
     display: flex;
 }
+.section-title {
+    border-left: 3px solid #000;
+    border-bottom: 3px solid #000;
+    padding: 0 35px 15px;
+    margin-bottom: 70px;
+}
 .section-border{
-    border-left: 2px solid black;
-    border-bottom: 2px solid black;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
     padding: 0 0 25px 25px;   
 }
 
@@ -109,18 +119,55 @@ hero-scroll {
 .section-numbers{
     background-color:#B765FF;
 }
+.number-box{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 50px;
+}
+.slide-up{
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+.slide-up > img {
+
+    height: 70px;
+    width: fit-content;
+    max-width: 100%;
+}
+.number-box-tags{
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.number-box-tags > .tag {
+    background-color: #fff;
+    border: 2px solid #000;
+    width: fit-content;
+    height: fit-content;
+    font-size: 16px;
+    font-weight: 300;
+    min-height: 32px;
+    border-radius: 16px;
+    padding: 4px 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 4px 4px 0;
+}
+
 /* 2ª PARTE - componentes reutilizables */
 
-/* ANIMACION TEXTO QUE APARECE - elemento: TextAnimatedHeading */
+/* ANIMACION ELEMENTO QUE APARECE - elemento: slideInAnimation */
 /*Estilo del elemento*/
-.TextAnimatedHeading{
+.slideInAnimation{
 
     overflow: hidden;
     padding: 0px 0px 10px;
 }
 /* Animacion del elemento */
 /* Estado inicial del texto: desplazado hacia abajo y oculto */
-.TextAnimatedHeading > * {
+.slideInAnimation > * {
     transform: translateY(50px);
     transition: transform 0.6s ease-out;
 }
@@ -134,10 +181,10 @@ hero-scroll {
     }
 }
 /* Clase para activar la animación del texto al entrar en la viewport */
-.TextAnimatedHeading.visible > * {
+.slideInAnimation.visible > * {
     animation: slideIn 0.6s ease-out forwards;
 }
-/* FINAL DE - ANIMACION TEXTO QUE APARECE - elemento: TextAnimatedHeading */
+/* FINAL DE - ANIMACION TEXTO QUE APARECE - elemento: slideInAnimation */
 
 
 
@@ -154,6 +201,14 @@ hero-scroll {
         font-size: 20px;
         line-height: 25px;
         font-weight: 300;
+    }
+    .section-title {
+        border-left: 2px solid #000;
+        border-bottom: 2px solid #000;
+    }
+    .section-border{
+        border-left: 2px solid black;
+        border-bottom: 2px solid black; 
     }
     .arrow{
         width: 130px;
@@ -172,6 +227,9 @@ hero-scroll {
         font-size: 40px;
         line-height: 54px;
     }
+    .centered-section {
+        width: calc(100vw - 60px * 2);
+    } 
 
 }
 
@@ -179,5 +237,8 @@ hero-scroll {
     .h1 {
         font-size: 28px;
         line-height: 30px;
+    }
+    .centered-section {
+        width: calc(100vw - 30px * 2);
     }
 }
