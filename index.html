@@ -6,143 +6,212 @@
     <title>Proyecto replica - web componets - AnaG designWeb</title>
     <link rel="stylesheet" href="./styles/style.css">
 </head>
+
+<style>
+    .section-hero-scroll {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+
+    .section-hero-scroll span {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 58px;
+    opacity: 0;
+    animation: appear 2s forwards, bounce 2s infinite; 
+    }
+        @keyframes appear {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0); 
+            }
+        }
+</style>
+
+
 <body>
+    <!-- HEADER SECTION -->
     <header>
-    <section class="section-hero section">
-        <div class="section-hero-centered-section ">
-            <hero-title-box></hero-title-box>
-            <hero-scroll></hero-scroll>
-        </div>
-    </section>
-    </header>
-    <main>
-    <section class="section-mission section">
-        <div class="centered-section">
-            <div  class="section-mission-container-1 ">
-                <div class="section-border">
-                    <div class="slideInAnimation h1">
-                        <p>more digital</p>
+        <section class="section-hero section">
+            <div class="section-hero-centered-section ">
+                <div class="section-hero-tittle">
+                    <div class="section-hero-tittle-h hero-title-border-animation">
+                        <h1 class="hero-title-primary">OpenEU</h1>                
                     </div>
-                    <div class="slideInAnimation h1">
-                        <p>more innovative</p>
+                    <div class="section-hero-tittle-h hero-title-border-animation">
+                        <h2 class="hero-title-secondary">The Open European University</h2>
                     </div>
-                    <div class="slideInAnimation h1">
-                        <p>more diverse</p>
-                    </div>
-                    <div class="slideInAnimation h1">
-                        <p>more flexible</p>
-                    </div>
-                    <div class="slideInAnimation h1">
-                        <p>more learner-centred</p>
-                    </div>
-                    <div class="slideInAnimation h1">
-                        <p>more sustainable</p>
-                    </div>
-                    <div class="slideInAnimation h1">
-                        <p>more long-lasting</p>
-                    </div>
-                    <div class="slideInAnimation h1">
-                        <p>The pan-European open university</p>
-                    </div>
+                </div>                
+                <div class="section-hero-scroll">
+                    <span>scroll</span>
                 </div>
-                <img class="arrow" src="src/img/fletxa.svg" alt="" srcset="">
             </div>
-            <div class="section-title h1">
-                <p>Our mission</p>
-            </div>
-            <div class="section-border h2">
-                <p>
-                    01<br>
-                    Establish a learner-centred, inclusive, digital and green open university with a European scope, widening access to quality higher education and lifelong learning to all.
-                    <br><br>
-                    02<br>
-                    Contribute to the digital transformation of Higher Education Institutions, supporting them in the integration of digital technologies for education, resulting in the reinforcement and invigoration of the EHEA’s digital dimension
-                </p>
-            </div>
-        </div>
-        <div class="section-mission-map">
-            <img src="src/img/mapa2024.svg" alt="">
-        </div>
-    </section>
+        </section>
+    </header>
 
-    <section class="section-numbers section">
-        <div class="centered-section">
-            <div class="section-title h1">
-                <p>OpenEU in figures</p>
-            </div>
-            <div class="section-numbers-container">
-                <article class="section-border number-box">
-                    <div class="slide-up slideInAnimation"><img loading="auto" src="src/img/xifra1.svg" height="150px" alt="Number of students"></div>
-                    <p class="h5">+<span class="counter">368,000</span></p>
-                    <p class="h2">Number of students</p>
-                    <p class="h2">Academic year: 2022/2023</p>
-                </article>
-
-                <article class="section-border number-box">
-                    <div class="slide-up slideInAnimation"><img loading="auto" src="src/img/xifra2.svg" height="150px" alt="Number of students"></div>
-                    <p class="h5">+<span class="counter">709,000</span></p>
-                    <p class="h2">Number of Graduates</p>
-                </article>
-
-                <article class="section-border number-box">
-                    <div class="slide-up slideInAnimation"><img loading="auto" src="src/img/xifra3.svg" height="150px" alt="Number of students"></div>
-                    <p class="h5"><span class="counter">24,160</span></p>
-                    <p class="h2">Total staff</p>
-                </article>
-
-                <article class="section-border number-box">
-                    <div class="slide-up slideInAnimation"><img loading="auto" src="src/img/xifra4.svg" height="150px" alt="Number of students"></div>
-                    <p class="h5"><span class="counter">36</span></p>
-                    <p class="h2">Average age of students</p>
-                </article>
-
-                <article class="section-border number-box">
-                    <div class="slide-up slideInAnimation"><img loading="auto" src="src/img/xifra5.svg" height="150px" alt="Number of students"></div>
-                    <p class="h5"><span class="counter">84</span>%</p>
-                    <p class="h2">of students work and study at the same time</p>
-                </article>
-
-                <article class="section-border number-box">
-                    <p class="h2">We offer a wide range of...</p>
-                    <div class="number-box-tags">
-                        <span class="tag">Bachelors</span>
-                        <span class="tag">Masters</span>
-                        <span class="tag">Doctoral</span>
-                        <span class="tag">Lifelong learning</span>
-                        <span class="tag">Open courses</span>
-                        <span class="tag">Exam preparation courses</span>
-                        <span class="tag">Vocational training</span>
+    <!-- MAIN SECTION -->
+    <main>
+        <section class="section-mission section">
+            <div class="centered-section">
+                <div  class="section-mission-container-1">
+                    <div class="section-border">
+                        <div class="slideInAnimation h1">
+                            <p>more digital</p>
+                        </div>
+                        <div class="slideInAnimation h1">
+                            <p>more innovative</p>
+                        </div>
+                        <div class="slideInAnimation h1">
+                            <p>more diverse</p>
+                        </div>
+                        <div class="slideInAnimation h1">
+                            <p>more flexible</p>
+                        </div>
+                        <div class="slideInAnimation h1">
+                            <p>more learner-centred</p>
+                        </div>
+                        <div class="slideInAnimation h1">
+                            <p>more sustainable</p>
+                        </div>
+                        <div class="slideInAnimation h1">
+                            <p>more long-lasting</p>
+                        </div>
+                        <div class="slideInAnimation h1">
+                            <p>The pan-European open university</p>
+                        </div>
                     </div>
-                </article>
-
-                <article class="section-border number-box">
-                    <p class="h5"><span class="counter">12</span></p>
-                    <p class="h2">Study languages</p>
-                    <div class="number-box-tags">
-                        <span class="tag">Bulgarian</span>
-                        <span class="tag">Catalan</span>
-                        <span class="tag">Dutch</span>
-                        <span class="tag">English</span>
-                        <span class="tag">French</span>
-                        <span class="tag">German</span>
-                        <span class="tag">Greek</span>
-                        <span class="tag">Icelandic</span>
-                        <span class="tag">Latvian</span>
-                        <span class="tag">Portuguese</span>
-                        <span class="tag">Russian</span>
-                        <span class="tag">Spanish</span>
-                    </div>
-                </article>
+                    <img class="arrow" src="src/img/fletxa.svg" alt="" srcset="">
+                </div>
+                <div class="section-title h1">
+                    <p>Our mission</p>
+                </div>
+                <div class="section-border h2">
+                    <p>
+                        01<br>
+                        Establish a learner-centred, inclusive, digital and green open university with a European scope, widening access to quality higher education and lifelong learning to all.
+                        <br><br>
+                        02<br>
+                        Contribute to the digital transformation of Higher Education Institutions, supporting them in the integration of digital technologies for education, resulting in the reinforcement and invigoration of the EHEA’s digital dimension
+                    </p>
+                </div>
             </div>
-        </div>
-    </section>
-    
-    </section>      
+            <div class="section-mission-map">
+                <img src="src/img/mapa2024.svg" alt="">
+            </div>
+        </section>
+        <section class="section-numbers section">
+            <div class="centered-section">
+                <div class="section-title h1">
+                    <p>OpenEU in figures</p>
+                </div>
+                <div class="section-numbers-container">
+                    <article class="section-border number-box">
+                        <div class="slide-up slideInAnimation"><img loading="auto" src="src/img/xifra1.svg" height="150px" alt="Number of students"></div>
+                        <p class="h5">+<span class="counter">368,000</span></p>
+                        <p class="h2">Number of students</p>
+                        <p class="h2">Academic year: 2022/2023</p>
+                    </article>
+
+                    <article class="section-border number-box">
+                        <div class="slide-up slideInAnimation"><img loading="auto" src="src/img/xifra2.svg" height="150px" alt="Number of students"></div>
+                        <p class="h5">+<span class="counter">709,000</span></p>
+                        <p class="h2">Number of Graduates</p>
+                    </article>
+
+                    <article class="section-border number-box">
+                        <div class="slide-up slideInAnimation"><img loading="auto" src="src/img/xifra3.svg" height="150px" alt="Number of students"></div>
+                        <p class="h5"><span class="counter">24,160</span></p>
+                        <p class="h2">Total staff</p>
+                    </article>
+
+                    <article class="section-border number-box">
+                        <div class="slide-up slideInAnimation"><img loading="auto" src="src/img/xifra4.svg" height="150px" alt="Number of students"></div>
+                        <p class="h5"><span class="counter">36</span></p>
+                        <p class="h2">Average age of students</p>
+                    </article>
+
+                    <article class="section-border number-box">
+                        <div class="slide-up slideInAnimation"><img loading="auto" src="src/img/xifra5.svg" height="150px" alt="Number of students"></div>
+                        <p class="h5"><span class="counter">84</span>%</p>
+                        <p class="h2">of students work and study at the same time</p>
+                    </article>
+
+                    <article class="section-border number-box">
+                        <p class="h2">We offer a wide range of...</p>
+                        <div class="number-box-tags">
+                            <span class="tag">Bachelors</span>
+                            <span class="tag">Masters</span>
+                            <span class="tag">Doctoral</span>
+                            <span class="tag">Lifelong learning</span>
+                            <span class="tag">Open courses</span>
+                            <span class="tag">Exam preparation courses</span>
+                            <span class="tag">Vocational training</span>
+                        </div>
+                    </article>
+
+                    <article class="section-border number-box">
+                        <p class="h5"><span class="counter">12</span></p>
+                        <p class="h2">Study languages</p>
+                        <div class="number-box-tags">
+                            <span class="tag">Bulgarian</span>
+                            <span class="tag">Catalan</span>
+                            <span class="tag">Dutch</span>
+                            <span class="tag">English</span>
+                            <span class="tag">French</span>
+                            <span class="tag">German</span>
+                            <span class="tag">Greek</span>
+                            <span class="tag">Icelandic</span>
+                            <span class="tag">Latvian</span>
+                            <span class="tag">Portuguese</span>
+                            <span class="tag">Russian</span>
+                            <span class="tag">Spanish</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
     </main>
 
 
+    <script>
+        // ============ COMPONENTE section-hero-tittle del header ============ //
+
+        function initHeroTitleAnimation() {
+            const h1 = document.querySelector('.section-hero-tittle h1');
+            const h2 = document.querySelector('.section-hero-tittle h2');
+    
+            const adjustWidth = () => {
+                h2.style.width = `${h1.offsetWidth}px`;
+            };
+            adjustWidth();
+            window.addEventListener('resize', adjustWidth);
+            
+        }
+    
+        // Ejecuta la función al cargar el DOM
+        document.addEventListener("DOMContentLoaded", initHeroTitleAnimation);
+    </script>
+  
+
     <!--  scripts para las animaciones -->
     <script>
+        // ============ SLIDE-IN ANIMATIONS ============ //
         // ANIMACION ELEMENTO QUE APARECE - section: section-mission elemento: slideInAnimation
         // Utilizando IntersectionObserver para saber cuando el elemento entra en pantalla
         document.addEventListener("DOMContentLoaded", function () {
@@ -168,6 +237,7 @@
         });
     </script>
     <script>
+        // ============ NUMBER COUNTERS ============ //
         // ANIMACION box NUMEROS que aparecen - section: section-numbers elemento: number-box
         // setInterval para la animacion de los numeros y IntersectionObserver para saber cuando el elemento entra en pantalla
         document.addEventListener("DOMContentLoaded", function () {
@@ -214,7 +284,5 @@
 
     </script>
 
-    <script src="./scripts/components/SectionHero/HeroTitleBox.js"></script>
-    <script src="./scripts/components/SectionHero/HeroScroll.js"></script>
 </body>
 </html>

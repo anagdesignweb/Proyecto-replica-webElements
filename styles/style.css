@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* Este style contiene:
-    1ª PARTE: el estilo general, estructura de la pagina y posicion de sus secciones
-    2ª PARTE: estilo de los componentes reutilizables por orden de aparicion en la web
-*/
-/* 1ª PARTE - estilo y estructura general */
+/* ============ RESET & BASE Y ESTRUCTURA GENERAL ============ */
 *, html, body {
     width: 100%;
     padding: 0;
@@ -12,12 +8,13 @@
     font-family: "Work Sans", sans-serif;
     box-sizing: border-box;
 }
-/* estilos de los textos  */
-.h1{
+
+/* ============ TEXTOS GENERALES ============ */
+.h1 {
     font-size: 50px;
     font-weight: 300;
 }
-.h2{
+.h2 {
     font-size: 32px;
     font-weight: 300;
 }
@@ -26,12 +23,10 @@
     line-height: 60px;
     font-weight: 300;
 }
-.bordeColor{
-    border: 1px solid red;
-}
 
-/* estilos generales de las secciones  */
+/* ============ LAYOUT ============ */
 .centered-section {
+    /* Centra la seccion */
     box-sizing: border-box;
     width: 60vw;
     margin: 0 auto;
@@ -42,26 +37,20 @@
     padding-top: 100px;
     overflow-x: hidden;
 }
-.section-mission > .centered-section > *:not(:last-child){
-    margin-bottom: 70px;
-}
-.section-mission-container-1{
-    display: flex;
-}
 .section-title {
     border-left: 3px solid #000;
     border-bottom: 3px solid #000;
     padding: 0 35px 15px;
     margin-bottom: 70px;
 }
-.section-border{
+.section-border {
     border-left: 3px solid black;
     border-bottom: 3px solid black;
     padding: 0 0 25px 25px;   
 }
 
-/* Section hero */
-.section-hero{
+/* ============ SECTION: HERO ============ */
+.section-hero {
     box-sizing: border-box;
     background-color: #1084FF;
     display: flex;
@@ -70,6 +59,7 @@
     align-items: center;
     position: relative;
 }
+
 .section-hero-centered-section {
     box-sizing: border-box;
     width: 60vw;
@@ -80,71 +70,129 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
-hero-title-box {
-    display: block;
-    width: fit-content;
-    margin: 0;
+/* Estilos del título */
+.hero-title-primary {
+    font-size: 58px;
+    font-weight: 500;
+    line-height: 58px;
+    letter-spacing: -4px;
 }
-hero-scroll {
-    /*Esto es adicional ya que al añadir un web component con shadow DOM no interactua bien*/
-    display: block; /* Asegura que el componente ocupe su propio espacio */
+.hero-title-secondary {
+    font-size: 35px;
+    font-weight: 300;
+    line-height: 33px;
+}
+.section-hero-tittle {
     width: fit-content;
-    margin: 0;
-    position: absolute;
-    width: fit-content;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-/* Section mission */
+.hero-title-border-animation {
+/* borde y animacion del borde del texto */        
+    overflow: hidden;
+    width: fit-content;
+    padding: 5px 5px 15px 15px;
+    clip-path: polygon(0 5px, 5px 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%);
+    border-left: 0 solid black;
+    border-bottom: 0 solid black;
+    transform: translate(0, 0);
+    transform-origin: bottom left;
+    animation: showBorder 0.6s ease-out forwards, moveBox 0.2s ease-out forwards;
+    animation-delay: 1.5s;
+}
+
+/* Animación de deslizamiento del texto */
+.hero-title-border-animation > * {
+    transform: translateY(50px);
+    animation: slideUp 0.6s ease-out forwards;
+}
+
+/* Keyframes para animaciones */
+@keyframes slideUp {
+    0% {
+        transform: translateY(50px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes showBorder {
+    0% {
+        border-left-width: 0;
+        border-bottom-width: 0;
+    }
+    80% {
+        border-left-width: 6px;
+        border-bottom-width: 6px;
+    }
+    100% {
+        border-left-width: 5px;
+        border-bottom-width: 5px;
+    }
+}
+
+@keyframes moveBox {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(5px, -5px);
+    }
+}
+
+/* ============ SECTION: MISSION ============ */
 .section-mission {
     background-color: #00FF86;
 }
 
-.arrow{
-    width: fit-content;
-   height: 180px; 
-   margin: 30px 0 0 auto;
+.section-mission > .centered-section > *:not(:last-child) {
+    margin-bottom: 70px;
 }
-.section-mission-map{
+
+.section-mission-container-1 {
+    display: flex;
+}
+
+.arrow {
+    width: fit-content;
+    height: 180px; 
+    margin: 30px 0 0 auto;
+}
+
+.section-mission-map {
     width: 750px;
     margin-left: auto;
     margin-bottom: -8px;
     margin-right: -1px;
 }
 
-/* Section numbers */
-.section-numbers{
-    background-color:#B765FF;
+/* ============ SECTION: NUMBERS ============ */
+.section-numbers {
+    background-color: #B765FF;
 }
-.number-box{
+
+.number-box {
     display: flex;
     flex-direction: column;
     align-items: start;
     margin-bottom: 50px;
 }
-.slide-up{
-    overflow: hidden;
-    padding-bottom: 10px;
-}
-.slide-up > img {
 
-    height: 70px;
-    width: fit-content;
-    max-width: 100%;
-}
-.number-box-tags{
+.number-box-tags {
     margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
 }
+
 .number-box-tags > .tag {
     background-color: #fff;
     border: 2px solid #000;
     width: fit-content;
-    height: fit-content;
     font-size: 16px;
     font-weight: 300;
     min-height: 32px;
@@ -156,22 +204,21 @@ hero-scroll {
     margin: 0 4px 4px 0;
 }
 
-/* 2ª PARTE - componentes reutilizables */
+/* ============ COMPONENTES REUTILIZABLES ============ */
 
-/* ANIMACION ELEMENTO QUE APARECE - elemento: slideInAnimation */
-/*Estilo del elemento*/
-.slideInAnimation{
-
+/* ANIMACIÓN ELEMENTO QUE APARECE - elemento: slideInAnimation */
+.slideInAnimation {
     overflow: hidden;
     padding: 0px 0px 10px;
 }
-/* Animacion del elemento */
-/* Estado inicial del texto: desplazado hacia abajo y oculto */
+
+/* Animación del texto al entrar en el viewport */
 .slideInAnimation > * {
     transform: translateY(50px);
     transition: transform 0.6s ease-out;
 }
-/* Funcion de animación del texto al entrar en la viewport */
+
+/* Función de animación */
 @keyframes slideIn {
     0% {
         transform: translateY(50px);
@@ -180,24 +227,19 @@ hero-scroll {
         transform: translateY(0);
     }
 }
-/* Clase para activar la animación del texto al entrar en la viewport */
+
+/* Activación de animación */
 .slideInAnimation.visible > * {
     animation: slideIn 0.6s ease-out forwards;
 }
-/* FINAL DE - ANIMACION TEXTO QUE APARECE - elemento: slideInAnimation */
 
-
-
-
-
-
-/* MEDIA QUERIES */
+/* ============ MEDIA QUERIES ============ */
 @media only screen and (max-width: 1280px) {
     .h1 {
         font-size: 50px;
         line-height: 54px;
     }
-    .h2{
+    .h2 {
         font-size: 20px;
         line-height: 25px;
         font-weight: 300;
@@ -206,22 +248,23 @@ hero-scroll {
         border-left: 2px solid #000;
         border-bottom: 2px solid #000;
     }
-    .section-border{
+    .section-border {
         border-left: 2px solid black;
         border-bottom: 2px solid black; 
     }
-    .arrow{
+    .arrow {
         width: 130px;
     }
-    .section-mission-container-1{
+    .section-mission-container-1 {
         flex-direction: column;
     }
-    .section-mission-map{
+    .section-mission-map {
         width: 100%;
         display: block;
         margin-top: auto;
     }
 }
+
 @media only screen and (max-width: 768px) {
     .h1 {
         font-size: 40px;
@@ -230,7 +273,6 @@ hero-scroll {
     .centered-section {
         width: calc(100vw - 60px * 2);
     } 
-
 }
 
 @media only screen and (max-width: 500px) {
