@@ -59,20 +59,13 @@
     align-items: center;
     position: relative;
 }
-
-.section-hero-centered-section {
-    box-sizing: border-box;
-    width: 60vw;
-    max-width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    text-align: start;
+.section-hero-tittle {
+    width: fit-content;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    gap: 20px;
 }
-/* Estilos del título */
+
 .hero-title-primary {
     font-size: 58px;
     font-weight: 500;
@@ -84,34 +77,88 @@
     font-weight: 300;
     line-height: 33px;
 }
-.section-hero-tittle {
-    width: fit-content;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+
+/* ============ SECTION: MISSION ============ */
+.section-mission {
+    background-color: #00FF86;
 }
 
+.section-mission > .centered-section > *:not(:last-child) {
+    margin-bottom: 70px;
+}
+
+.section-mission-container{
+    display: flex;
+}
+
+.arrow {
+    width: fit-content;
+    height: 180px; 
+    margin: 30px 0 0 auto;
+}
+
+.section-mission-map {
+/* este elemento lleva media queries para que cambien de posicion segun la vista. Tambien tienes que tener en cuenta las propiedades de su contenedor padre */
+    width: 750px;
+    margin-left: auto;
+    margin-bottom: -8px;
+    margin-right: -1px;
+}
+
+/* ============ SECTION: NUMBERS ============ */
+.section-numbers {
+    background-color: #B765FF;
+}
+
+.number-counter-animation {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 50px;
+}
+
+/* Seccion tags dentro de article */
+.number-counter-animation-tags {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.number-counter-animation-tags > .tag {
+    background-color: #fff;
+    border: 2px solid #000;
+    width: fit-content;
+    font-size: 16px;
+    font-weight: 300;
+    min-height: 32px;
+    border-radius: 16px;
+    padding: 4px 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 4px 4px 0;
+}
+
+/* ============ COMPONENTES REUTILIZABLES ============ */
+
+/*INICIO de la ANIMACION .hero-title-border-animation */
 .hero-title-border-animation {
-/* borde y animacion del borde del texto */        
     overflow: hidden;
     width: fit-content;
     padding: 5px 5px 15px 15px;
-    clip-path: polygon(0 5px, 5px 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%);
-    border-left: 0 solid black;
-    border-bottom: 0 solid black;
+    border-left: 0 solid black;/*borde de la caja del texto */ 
+    border-bottom: 0 solid black;/*borde de la caja del texto */ 
     transform: translate(0, 0);
     transform-origin: bottom left;
     animation: showBorder 0.6s ease-out forwards, moveBox 0.2s ease-out forwards;
     animation-delay: 1.5s;
 }
 
-/* Animación de deslizamiento del texto */
 .hero-title-border-animation > * {
     transform: translateY(50px);
     animation: slideUp 0.6s ease-out forwards;
 }
 
-/* Keyframes para animaciones */
 @keyframes slideUp {
     0% {
         transform: translateY(50px);
@@ -144,81 +191,61 @@
         transform: translate(5px, -5px);
     }
 }
-
-/* ============ SECTION: MISSION ============ */
-.section-mission {
-    background-color: #00FF86;
-}
-
-.section-mission > .centered-section > *:not(:last-child) {
-    margin-bottom: 70px;
-}
-
-.section-mission-container-1 {
+/*FIN de la ANIMACION .hero-title-border-animation */
+/*INICIO de la ANIMACION .hero-scroll-animation */
+.hero-scroll-animation {
     display: flex;
-}
-
-.arrow {
-    width: fit-content;
-    height: 180px; 
-    margin: 30px 0 0 auto;
-}
-
-.section-mission-map {
-    width: 750px;
-    margin-left: auto;
-    margin-bottom: -8px;
-    margin-right: -1px;
-}
-
-/* ============ SECTION: NUMBERS ============ */
-.section-numbers {
-    background-color: #B765FF;
-}
-
-.number-box {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    margin-bottom: 50px;
-}
-
-.number-box-tags {
-    margin-top: 50px;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.number-box-tags > .tag {
-    background-color: #fff;
-    border: 2px solid #000;
-    width: fit-content;
-    font-size: 16px;
-    font-weight: 300;
-    min-height: 32px;
-    border-radius: 16px;
-    padding: 4px 12px;
-    display: inline-flex;
-    align-items: center;
     justify-content: center;
-    margin: 0 4px 4px 0;
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
 }
 
-/* ============ COMPONENTES REUTILIZABLES ============ */
+.hero-scroll-animation span {
+font-size: 24px;
+font-weight: 500;
+line-height: 58px;
+opacity: 0;
+animation: appear 2s forwards, bounce 2s infinite;
+animation-delay: 2s;
+}
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
-/* ANIMACIÓN ELEMENTO QUE APARECE - elemento: slideInAnimation */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0); 
+    }
+}
+.hero-scroll-animation img{
+    width: 20px;
+}
+/*FIN de la ANIMACION .hero-scroll-animation */
+/*INICIO de la ANIMACION .slideInAnimation */
+/* esta animacion se esta utilizando en diferentes elementos del DOM*/
 .slideInAnimation {
     overflow: hidden;
     padding: 0px 0px 10px;
 }
 
-/* Animación del texto al entrar en el viewport */
 .slideInAnimation > * {
     transform: translateY(50px);
     transition: transform 0.6s ease-out;
 }
 
-/* Función de animación */
 @keyframes slideIn {
     0% {
         transform: translateY(50px);
@@ -228,12 +255,14 @@
     }
 }
 
-/* Activación de animación */
 .slideInAnimation.visible > * {
     animation: slideIn 0.6s ease-out forwards;
 }
+/*FIN de la ANIMACION .slideInAnimation */
+
 
 /* ============ MEDIA QUERIES ============ */
+
 @media only screen and (max-width: 1280px) {
     .h1 {
         font-size: 50px;
@@ -255,7 +284,7 @@
     .arrow {
         width: 130px;
     }
-    .section-mission-container-1 {
+    .section-mission-container {
         flex-direction: column;
     }
     .section-mission-map {

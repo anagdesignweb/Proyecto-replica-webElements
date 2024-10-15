@@ -7,60 +7,20 @@
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 
-<style>
-    .section-hero-scroll {
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        align-items: center;
-    }
-
-    .section-hero-scroll span {
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 58px;
-    opacity: 0;
-    animation: appear 2s forwards, bounce 2s infinite; 
-    }
-        @keyframes appear {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-
-        @keyframes bounce {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-            100% {
-                transform: translateY(0); 
-            }
-        }
-</style>
-
-
 <body>
     <!-- HEADER SECTION -->
     <header>
         <section class="section-hero section">
-            <div class="section-hero-centered-section ">
-                <div class="section-hero-tittle">
-                    <div class="section-hero-tittle-h hero-title-border-animation">
-                        <h1 class="hero-title-primary">OpenEU</h1>                
-                    </div>
-                    <div class="section-hero-tittle-h hero-title-border-animation">
-                        <h2 class="hero-title-secondary">The Open European University</h2>
-                    </div>
-                </div>                
-                <div class="section-hero-scroll">
-                    <span>scroll</span>
+            <div class="section-hero-tittle">
+                <div class="hero-title-border-animation">
+                    <h1 class="hero-title-primary">OpenEU</h1>                
                 </div>
+                <div class="hero-title-border-animation">
+                    <h2 class="hero-title-secondary">The Open European University</h2>
+                </div>
+            </div>                
+            <div class="hero-scroll-animation">
+                <span>scroll<br><img src="src/img/flecha-hacia-abajo.png" alt=""></span>
             </div>
         </section>
     </header>
@@ -69,30 +29,30 @@
     <main>
         <section class="section-mission section">
             <div class="centered-section">
-                <div  class="section-mission-container-1">
+                <div class="section-mission-container">
                     <div class="section-border">
-                        <div class="slideInAnimation h1">
+                        <div class="slide-in-animation h1">
                             <p>more digital</p>
                         </div>
-                        <div class="slideInAnimation h1">
+                        <div class="slide-in-animation h1">
                             <p>more innovative</p>
                         </div>
-                        <div class="slideInAnimation h1">
+                        <div class="slide-in-animation h1">
                             <p>more diverse</p>
                         </div>
-                        <div class="slideInAnimation h1">
+                        <div class="slide-in-animation h1">
                             <p>more flexible</p>
                         </div>
-                        <div class="slideInAnimation h1">
+                        <div class="slide-in-animation h1">
                             <p>more learner-centred</p>
                         </div>
-                        <div class="slideInAnimation h1">
+                        <div class="slide-in-animation h1">
                             <p>more sustainable</p>
                         </div>
-                        <div class="slideInAnimation h1">
+                        <div class="slide-in-animation h1">
                             <p>more long-lasting</p>
                         </div>
-                        <div class="slideInAnimation h1">
+                        <div class="slide-in-animation h1">
                             <p>The pan-European open university</p>
                         </div>
                     </div>
@@ -121,40 +81,40 @@
                     <p>OpenEU in figures</p>
                 </div>
                 <div class="section-numbers-container">
-                    <article class="section-border number-box">
-                        <div class="slide-up slideInAnimation"><img loading="auto" src="src/img/xifra1.svg" height="150px" alt="Number of students"></div>
+                    <article class="number-counter-animation section-border">
+                        <div class="slide-up slide-in-animation"><img loading="auto" src="src/img/xifra1.svg" height="150px" alt="Number of students"></div>
                         <p class="h5">+<span class="counter">368,000</span></p>
                         <p class="h2">Number of students</p>
                         <p class="h2">Academic year: 2022/2023</p>
                     </article>
 
-                    <article class="section-border number-box">
-                        <div class="slide-up slideInAnimation"><img loading="auto" src="src/img/xifra2.svg" height="150px" alt="Number of students"></div>
+                    <article class="number-counter-animation section-border">
+                        <div class="slide-up slide-in-animation"><img loading="auto" src="src/img/xifra2.svg" height="150px" alt="Number of students"></div>
                         <p class="h5">+<span class="counter">709,000</span></p>
                         <p class="h2">Number of Graduates</p>
                     </article>
 
-                    <article class="section-border number-box">
-                        <div class="slide-up slideInAnimation"><img loading="auto" src="src/img/xifra3.svg" height="150px" alt="Number of students"></div>
+                    <article class="number-counter-animation section-border">
+                        <div class="slide-up slide-in-animation"><img loading="auto" src="src/img/xifra3.svg" height="150px" alt="Number of students"></div>
                         <p class="h5"><span class="counter">24,160</span></p>
                         <p class="h2">Total staff</p>
                     </article>
 
-                    <article class="section-border number-box">
-                        <div class="slide-up slideInAnimation"><img loading="auto" src="src/img/xifra4.svg" height="150px" alt="Number of students"></div>
+                    <article class="number-counter-animation section-border">
+                        <div class="slide-up slide-in-animation"><img loading="auto" src="src/img/xifra4.svg" height="150px" alt="Number of students"></div>
                         <p class="h5"><span class="counter">36</span></p>
                         <p class="h2">Average age of students</p>
                     </article>
 
-                    <article class="section-border number-box">
-                        <div class="slide-up slideInAnimation"><img loading="auto" src="src/img/xifra5.svg" height="150px" alt="Number of students"></div>
+                    <article class="number-counter-animation section-border">
+                        <div class="slide-up slide-in-animation"><img loading="auto" src="src/img/xifra5.svg" height="150px" alt="Number of students"></div>
                         <p class="h5"><span class="counter">84</span>%</p>
                         <p class="h2">of students work and study at the same time</p>
                     </article>
 
-                    <article class="section-border number-box">
+                    <article class="number-counter-animation section-border">
                         <p class="h2">We offer a wide range of...</p>
-                        <div class="number-box-tags">
+                        <div class="number-counter-animation-tags">
                             <span class="tag">Bachelors</span>
                             <span class="tag">Masters</span>
                             <span class="tag">Doctoral</span>
@@ -165,10 +125,10 @@
                         </div>
                     </article>
 
-                    <article class="section-border number-box">
+                    <article class="section-border">
                         <p class="h5"><span class="counter">12</span></p>
                         <p class="h2">Study languages</p>
-                        <div class="number-box-tags">
+                        <div class="number-counter-animation-tags">
                             <span class="tag">Bulgarian</span>
                             <span class="tag">Catalan</span>
                             <span class="tag">Dutch</span>
@@ -188,10 +148,9 @@
         </section>
     </main>
 
-
+    <!--  scripts para las animaciones -->
     <script>
-        // ============ COMPONENTE section-hero-tittle del header ============ //
-
+        // ============ ANIMACION section-hero-tittle ============ //
         function initHeroTitleAnimation() {
             const h1 = document.querySelector('.section-hero-tittle h1');
             const h2 = document.querySelector('.section-hero-tittle h2');
@@ -207,16 +166,14 @@
         // Ejecuta la función al cargar el DOM
         document.addEventListener("DOMContentLoaded", initHeroTitleAnimation);
     </script>
-  
 
-    <!--  scripts para las animaciones -->
     <script>
-        // ============ SLIDE-IN ANIMATIONS ============ //
-        // ANIMACION ELEMENTO QUE APARECE - section: section-mission elemento: slideInAnimation
-        // Utilizando IntersectionObserver para saber cuando el elemento entra en pantalla
-        document.addEventListener("DOMContentLoaded", function () {
-            const animatedElements = document.querySelectorAll('.slideInAnimation');
-
+        // ============ ANIMACION slide-in-animation ============ //
+        // funcion para activar la animacion cuando el elemento esta en pantalla
+        // Utilizando IntersectionObserver
+        function initSlideInOnViewport() {
+            const animatedElements = document.querySelectorAll('.slide-in-animation');
+    
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -228,61 +185,69 @@
                     }
                 });
             }, {
-                threshold: 1.0 // La animación se activa cuando el 10% del elemento sea visible
+                threshold: 1.0 // La animación se activa cuando el 100% del elemento sea visible
             });
-
+    
             animatedElements.forEach(el => {
-                observer.observe(el); // Para observa cada elemento con la clase slideInAnimation y saber si esta en el viewport
+                observer.observe(el); // Para observa cada elemento con la clase slide-in-animation y saber si esta en el viewport
             });
-        });
+        }
+    
+        // Ejecutar la función al cargar el DOM
+        document.addEventListener("DOMContentLoaded", initSlideInOnViewport);
     </script>
+    
     <script>
-        // ============ NUMBER COUNTERS ============ //
-        // ANIMACION box NUMEROS que aparecen - section: section-numbers elemento: number-box
-        // setInterval para la animacion de los numeros y IntersectionObserver para saber cuando el elemento entra en pantalla
-        document.addEventListener("DOMContentLoaded", function () {
-            const contadores = document.querySelectorAll('.counter'); // 
-            contadores.forEach(contador => {
-                let cantidadInicial = 0;
-                const valorFinal = parseInt(contador.textContent.replace(',', ''));
-                const tiempo = 2000; // Duración total de la animacion en milisegundos
-                const incremento = Math.ceil(valorFinal / (tiempo / 100));
-                let intervalo;
+        // ============ ANIMACION number-counter-animation > (.counter) ============ //
+        // funcion para activar la animacion cuando el elemento esta en pantalla Y animar los numeros
+        // Utilizando setInterval para la animacion de los numeros y IntersectionObserver para saber cuando el elemento entra en pantalla
+        function initNumberCounterAnimation() {
+            const counters = document.querySelectorAll('.counter');
 
-                // Función para actualiza el numero
-                function actualizarDato() {
-                    if (cantidadInicial < valorFinal) {
-                        cantidadInicial += incremento;
-                        if (cantidadInicial > valorFinal) {
-                            cantidadInicial = valorFinal;
-                        }
-                        contador.textContent = cantidadInicial.toLocaleString();
+            counters.forEach(counter => {
+                let startValue = 0;
+                const endValue = parseInt(counter.textContent.replace(',', ''));
+                const duration = 2000; // Duración total de la animación en milisegundos
+                const increment = Math.ceil(endValue / (duration / 100));
+                let interval;
+
+                // Función que actualiza el número gradualmente
+                function updateCounter() {
+                    if (startValue < endValue) {
+                        startValue += increment;
+                        if (startValue > endValue) startValue = endValue;
+                        counter.textContent = startValue.toLocaleString();
                     } else {
-                        clearInterval(intervalo); // Detiene el intervalo
+                        clearInterval(interval); // Detiene la animación al llegar al valor final
                     }
                 }
 
-                const observer = new IntersectionObserver((entries, observer) => {
+                // IntersectionObserver para activar la animación cuando el elemento entre en el viewport
+                const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
-                            // si el elemento es visible en pantalla entonces ejecuta la funcion de la animacion
-                            intervalo = setInterval(actualizarDato, 25); // Anima cada 25 ms
+                            // Inicia la animación cuando el contador es visible
+                            interval = setInterval(updateCounter, 25);
                         } else {
-                            // Sino reinicia los valores del contador para que la animación se repita
-                            clearInterval(intervalo);
-                            cantidadInicial = 0;
-                            contador.textContent = '0';
+                            // Reinicia los valores del contador para que la animación se repita
+                            clearInterval(interval);
+                            startValue = 0;
+                            counter.textContent = '0';
                         }
                     });
                 }, {
-                    threshold: 1.0 // Inicia cuando el 100% del elemento es visible
+                    threshold: 1.0 // Inicia la animación cuando el 100% del elemento es visible
                 });
 
-                observer.observe(contador);
+                // Observar cada contador
+                observer.observe(counter);
             });
-        });
+        }
 
+        // Ejecutar la función al cargar el DOM
+        document.addEventListener("DOMContentLoaded", initNumberCounterAnimation);
     </script>
+
 
 </body>
 </html>

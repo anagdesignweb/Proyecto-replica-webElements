@@ -38,3 +38,5 @@ Esta animación se aplica a elementos de texto para que **aparezcan con un despl
 
 - **CSS**: 0.6s
 - **JS**: Desplaza el texto 50px hacia arriba hasta su posición original.
+
+tema JS : si vas a utilizar varias funciones de js puedes añadirlas todas en el mismo addEventListener y ahorrar lineas de codigo
