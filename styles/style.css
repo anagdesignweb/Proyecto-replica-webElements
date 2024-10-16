@@ -24,7 +24,7 @@
     font-weight: 300;
 }
 
-/* ============ LAYOUT ============ */
+/* ============ LAYOUT GENERAL ============ */
 .centered-section {
     /* Centra la seccion */
     box-sizing: border-box;
@@ -58,6 +58,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    padding-top: 0;
 }
 .section-hero-tittle {
     width: fit-content;
@@ -109,22 +110,39 @@
 .section-numbers {
     background-color: #B765FF;
 }
-
-.number-counter-animation {
+.section-numbers-container{
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+/*propiedades del article */
+.section-article-card{
     display: flex;
     flex-direction: column;
     align-items: start;
     margin-bottom: 50px;
+    max-width: calc(50% - 35px);
+    margin-top: auto;
+    margin-bottom: 100px;
+    padding: 0 0 15px 15px;
 }
 
-/* Seccion tags dentro de article */
-.number-counter-animation-tags {
+.animation-img{
+    align-items: start;
+    width: fit-content;
+    max-width: 100%;
+    height: 150px;
+}
+
+/*article con tags */
+.tags {
     margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
 }
 
-.number-counter-animation-tags > .tag {
+.tags > .tag {
     background-color: #fff;
     border: 2px solid #000;
     width: fit-content;
@@ -202,7 +220,7 @@
     bottom: 0;
 }
 
-.hero-scroll-animation span {
+.scroll-animation-span {
 font-size: 24px;
 font-weight: 500;
 line-height: 58px;
@@ -234,14 +252,14 @@ animation-delay: 2s;
     width: 20px;
 }
 /*FIN de la ANIMACION .hero-scroll-animation */
-/*INICIO de la ANIMACION .slideInAnimation */
+/*INICIO de la ANIMACION .slide-in-animation */
 /* esta animacion se esta utilizando en diferentes elementos del DOM*/
-.slideInAnimation {
+.slide-in-animation {
     overflow: hidden;
     padding: 0px 0px 10px;
 }
 
-.slideInAnimation > * {
+.slide-in-animation > * {
     transform: translateY(50px);
     transition: transform 0.6s ease-out;
 }
@@ -255,10 +273,10 @@ animation-delay: 2s;
     }
 }
 
-.slideInAnimation.visible > * {
+.slide-in-animation.visible > * {
     animation: slideIn 0.6s ease-out forwards;
 }
-/*FIN de la ANIMACION .slideInAnimation */
+/*FIN de la ANIMACION .slide-in-animation */
 
 
 /* ============ MEDIA QUERIES ============ */
@@ -292,6 +310,14 @@ animation-delay: 2s;
         display: block;
         margin-top: auto;
     }
+    /* Section numbers */
+    .centered-section {
+        width: calc(100vw - 60px * 2);
+    }
+    /* propiedades del article */
+    .animation-img{
+        height: 70px;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -299,9 +325,10 @@ animation-delay: 2s;
         font-size: 40px;
         line-height: 54px;
     }
-    .centered-section {
-        width: calc(100vw - 60px * 2);
-    } 
+/* propiedades del article */
+    .section-article-card{
+        max-width: 100%;
+    }
 }
 
 @media only screen and (max-width: 500px) {
@@ -309,7 +336,5 @@ animation-delay: 2s;
         font-size: 28px;
         line-height: 30px;
     }
-    .centered-section {
-        width: calc(100vw - 30px * 2);
-    }
+
 }
